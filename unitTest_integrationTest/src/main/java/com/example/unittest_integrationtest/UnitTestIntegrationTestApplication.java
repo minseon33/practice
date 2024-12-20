@@ -1,13 +1,13 @@
 package com.example.unittest_integrationtest;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.unittest_integrationtest.ZombieGame.game.ZombieGame;
+import com.example.unittest_integrationtest.ZombieGame.view.View;
 
-@SpringBootApplication
 public class UnitTestIntegrationTestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(UnitTestIntegrationTestApplication.class, args);
+        ZombieGame zombieGame = new ZombieGame(new View());
+        zombieGame.gameStart();
     }
 
 }
