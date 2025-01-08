@@ -16,7 +16,7 @@ public class ZombieGame {
         //유저생성
         User user = User.initUser(view.generateUserName(), generateRandomNumber());
         //싸움
-        User updatedUser = battleStart(user);
+        User updatedUser = battleStart(user, view.chooseBattleRound());
         //승리자 출력
         view.displayWinResult(isWinner(updatedUser),updatedUser);
     }
@@ -26,8 +26,7 @@ public class ZombieGame {
         return random.nextInt(10);
     }
 
-    private User battleStart(User user){
-        int battleRound = view.chooseBattleRound();
+    private User battleStart(User user,int battleRound){
         for (int i = 0; i < battleRound; i++) {
             if(!user.isAlive()){
                break;
